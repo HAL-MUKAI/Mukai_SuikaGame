@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class GameOverLine : MonoBehaviour
 {
     [SerializeField] GameObject gameoverCanvasPrefub;
 
-    [SerializeField, Header("ゲームオーバー判定になっても待ってくれるフレーム数")] int gameOverWaitFlame;
+    [SerializeField, Header("繧ｲ繝ｼ繝繧ｪ繝ｼ繝舌�ｼ蛻､螳壹↓縺ｪ縺｣縺ｦ繧ょｾ�縺｣縺ｦ縺上ｌ繧九ヵ繝ｬ繝ｼ繝謨ｰ")] int gameOverWaitFlame;
 
 
 

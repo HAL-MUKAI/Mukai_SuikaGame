@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// ãˆÊ‚Ìƒtƒ‹[ƒc‚ğƒXƒ|[ƒ“‚³‚¹‚éƒXƒNƒŠƒvƒg‚Å‚·B
+/// ä¸Šä½ã®ãƒ•ãƒ«ãƒ¼ãƒ„ã‚’ã‚¹ãƒãƒ¼ãƒ³ã•ã›ã‚‹ã‚¹ã‚¯ãƒªãƒ—ãƒˆã§ã™ã€‚
 /// </summary>
 
 public class FluitsCollisionSpawner : MonoBehaviour
 {
     public static FluitsCollisionSpawner instance;
 
+    int fluitCount; //ã“ã‚ŒãŒï¼’ã§ã‚¹ãƒãƒ¼ãƒ³ã•ã›ã‚‹
 
-    int fluitCount; //‚±‚ê‚ª‚Q‚ÅƒXƒ|[ƒ“‚³‚¹‚é
-
-    [SerializeField, Header("ƒXƒ|[ƒ“‚ÌAddForce")] Vector2 spawnAddForcePower;
+    [SerializeField, Header("ã‚¹ãƒãƒ¼ãƒ³æ™‚ã®AddForce")] Vector2 spawnAddForcePower;
     [Serializable]public struct FluitsGameObject
     {
        public GameObject cherryObj, strawberry, budou, dekopon, orange, apple, nashi, peach, pine, melon, waterMelon;
@@ -40,10 +39,10 @@ public class FluitsCollisionSpawner : MonoBehaviour
 
 
     /// <summary>
-    /// ‚Q‚ÇŒÄ‚Ô‚Æ‚P‚Âã‚Ìƒtƒ‹[ƒc‚ğ‚·‚Û[‚ñ‚³‚¹‚Ü‚·
+    /// ï¼’ã©å‘¼ã¶ã¨ï¼‘ã¤ä¸Šã®ãƒ•ãƒ«ãƒ¼ãƒ„ã‚’ã™ã½ãƒ¼ã‚“ã•ã›ã¾ã™
     /// </summary>
-    /// <param name="pos">©g‚ÌêŠ‚ğ‚­‚¾‚³‚¢</param>
-    /// <param name="myFluit">©g‚Ìƒtƒ‹[ƒc‚ğ‚­‚¾‚³‚¢A¶¬‚·‚é‚Ì‚Í‚P‚Âã‚Ì‚Ó‚é[‚Â‚É‚È‚è‚Ü‚·B</param>
+    /// <param name="pos">è‡ªèº«ã®å ´æ‰€ã‚’ãã ã•ã„</param>
+    /// <param name="myFluit">è‡ªèº«ã®ãƒ•ãƒ«ãƒ¼ãƒ„ã‚’ãã ã•ã„ã€ç”Ÿæˆã™ã‚‹ã®ã¯ï¼‘ã¤ä¸Šã®ãµã‚‹ãƒ¼ã¤ã«ãªã‚Šã¾ã™ã€‚</param>
     public void FluitSpawn(Vector2 pos, FluitCont.Fluit myFluit)
     {
         fluitCount++;
@@ -55,43 +54,44 @@ public class FluitsCollisionSpawner : MonoBehaviour
 
             switch (myFluit)
             {
-                case FluitCont.Fluit.‚³‚­‚ç‚ñ‚Ú:
+                case FluitCont.Fluit.ã•ãã‚‰ã‚“ã¼:
                     newObj = Instantiate(fluitsGameObject.strawberry, pos, transform.rotation) as GameObject;
                     break;
-                case FluitCont.Fluit.‚¢‚¿‚²:
+                case FluitCont.Fluit.ã„ã¡ã”:
                     newObj = Instantiate(fluitsGameObject.budou, pos, Quaternion.identity);
                     break;
-                case FluitCont.Fluit.‚Ô‚Ç‚¤:
+                case FluitCont.Fluit.ã¶ã©ã†:
                     newObj = Instantiate(fluitsGameObject.dekopon, pos, Quaternion.identity);
                     break;
-                case FluitCont.Fluit.ƒfƒRƒ|ƒ“:
+                case FluitCont.Fluit.ãƒ‡ã‚³ãƒãƒ³:
                     newObj = Instantiate(fluitsGameObject.orange, pos, Quaternion.identity);
                     break;
-                case FluitCont.Fluit.ƒIƒŒƒ“ƒW:
+                case FluitCont.Fluit.ã‚ªãƒ¬ãƒ³ã‚¸:
                     newObj = Instantiate(fluitsGameObject.apple, pos, Quaternion.identity);
                     break;
-                case FluitCont.Fluit.‚è‚ñ‚²:
+                case FluitCont.Fluit.ã‚Šã‚“ã”:
                     newObj = Instantiate(fluitsGameObject.nashi, pos, Quaternion.identity);
                     break;
-                case FluitCont.Fluit.—œ:
+                case FluitCont.Fluit.æ¢¨:
                     newObj = Instantiate(fluitsGameObject.peach, pos, Quaternion.identity);
                     break;
-                case FluitCont.Fluit.“:
+                case FluitCont.Fluit.æ¡ƒ:
                     newObj = Instantiate(fluitsGameObject.pine, pos, Quaternion.identity);
                     break;
-                case FluitCont.Fluit.ƒpƒCƒiƒbƒvƒ‹:
+                case FluitCont.Fluit.ãƒ‘ã‚¤ãƒŠãƒƒãƒ—ãƒ«:
                     newObj = Instantiate(fluitsGameObject.melon, pos, Quaternion.identity);
                     break;
-                case FluitCont.Fluit.ƒƒƒ“:
+                case FluitCont.Fluit.ãƒ¡ãƒ­ãƒ³:
                     newObj = Instantiate(fluitsGameObject.waterMelon, pos, Quaternion.identity);
                     break;
-                case FluitCont.Fluit.ƒXƒCƒJ:
-                    Debug.Log("ƒXƒCƒJ‚ÍƒfƒXƒgƒ[ƒCII");
+                case FluitCont.Fluit.ã‚¹ã‚¤ã‚«:
+                    Debug.Log("ã‚¹ã‚¤ã‚«ã¯ãƒ‡ã‚¹ãƒˆãƒ­ãƒ¼ã‚¤ï¼ï¼");
                     break;
 
 
             }
 
+            //ã“ã“ã§ç”Ÿæˆã—ãŸã‚‚ã®ã«ã¡ã‚‡ã£ã¨ã ã‘AddForceã—ã¦ãƒ•ãƒ«ãƒ¼ãƒ„åŒå£«ã®ã‹ã¶ã‚Šã‚’æ¸›ã‚‰ã™
             Rigidbody2D r = newObj.GetComponent<Rigidbody2D>();
             r.AddForce(spawnAddForcePower);
 

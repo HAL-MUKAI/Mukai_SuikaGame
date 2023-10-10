@@ -3,41 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
 public class FluitCont : MonoBehaviour
 {
     public enum Fluit
     {
-        ‚³‚­‚ç‚ñ‚Ú,
-        ‚¢‚¿‚²,
-        ‚Ô‚Ç‚¤,
-        ƒfƒRƒ|ƒ“,
-        ƒIƒŒƒ“ƒW,
-        ‚è‚ñ‚²,
-        —œ,
-        “,
-        ƒpƒCƒiƒbƒvƒ‹,
-        ƒƒƒ“,
-        ƒXƒCƒJ
+        ã•ãã‚‰ã‚“ã¼,
+        ã„ã¡ã”,
+        ã¶ã©ã†,
+        ãƒ‡ã‚³ãƒãƒ³,
+        ã‚ªãƒ¬ãƒ³ã‚¸,
+        ã‚Šã‚“ã”,
+        æ¢¨,
+        æ¡ƒ,
+        ãƒ‘ã‚¤ãƒŠãƒƒãƒ—ãƒ«,
+        ãƒ¡ãƒ­ãƒ³,
+        ã‚¹ã‚¤ã‚«
     }
 
     public Fluit myFluit;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Fluits") //ƒtƒ‹[ƒc‚Å‚È‚¯‚ê‚Î–³Œø
+        if (collision.gameObject.tag != "Fluits") //ãƒ•ãƒ«ãƒ¼ãƒ„ã§ãªã‘ã‚Œã°ç„¡åŠ¹
             return;
 
         if(collision.gameObject.GetComponent<FluitCont>().myFluit == myFluit)

@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
 public class RetryButton : MonoBehaviour
 {
-    [SerializeField, Header("‹N“®‚É‘I‘ğó‘Ô‚É‚·‚é‚©")] bool enableSelected;
+    [SerializeField, Header("èµ·å‹•æ™‚ã«é¸æŠçŠ¶æ…‹ã«ã™ã‚‹ã‹")] bool enableSelected;
 
     Button _button;
     // Start is called before the first frame update

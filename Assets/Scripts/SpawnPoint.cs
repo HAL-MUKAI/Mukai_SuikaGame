@@ -5,26 +5,26 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
 
-    //ƒXƒ|ƒi[‚©‚ç”­¶‚³‚¹‚éƒtƒ‹[ƒc
+    //ã‚¹ãƒãƒŠãƒ¼ã‹ã‚‰ç™ºç”Ÿã•ã›ã‚‹ãƒ•ãƒ«ãƒ¼ãƒ„
     [SerializeField] public GameObject[] fluitGameObjs;
-    //ƒ‰ƒ“ƒ_ƒ€”’l@0`ƒtƒ‹[ƒc”z—ñ•ª
+    //ãƒ©ãƒ³ãƒ€ãƒ æ•°å€¤ã€€0ï½ãƒ•ãƒ«ãƒ¼ãƒ„é…åˆ—åˆ†
     [SerializeField] public int rondomNum;
 
-    [SerializeField] Vector2 spawnPosShift;
+    [SerializeField,Header("ç”Ÿæˆãƒã‚¤ãƒ³ãƒˆã‹ã‚‰ã®ãšã‚‰ã—")] Vector2 spawnPosShift;
 
 
     private void Start()
     {
-        //ƒ‰ƒ“ƒ_ƒ€”’l‚Ì‰Šú‰»
+        //ãƒ©ãƒ³ãƒ€ãƒ æ•°å€¤ã®åˆæœŸåŒ–
         rondomNum = Random.Range(0, fluitGameObjs.Length);
     }
 
 
     public void Spawn()
     {
-        //ƒtƒ‹[ƒc”z—ñ‚©‚çƒ‰ƒ“ƒ_ƒ€‚ğæ‚èo‚·
+        //ãƒ•ãƒ«ãƒ¼ãƒ„é…åˆ—ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã‚’å–ã‚Šå‡ºã™
         Instantiate(fluitGameObjs[rondomNum], (Vector2)transform.position + spawnPosShift, Quaternion.identity);
-        //ƒ‰ƒ“ƒ_ƒ€”’l‚ÌXV
+        //ãƒ©ãƒ³ãƒ€ãƒ æ•°å€¤ã®æ›´æ–°
         rondomNum = Random.Range(0, fluitGameObjs.Length);
     }
 }
